@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Business Strategy Audit</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body> <img style="height: 3cm; border-radius: 50%;" src="Screenshot 2024-10-04 114925.png" alt="" srcset="">
+    <h1> Business Strategy Audit for Urban Man Exquisite Fabrics </h1>
+    <body>
+      <header>
+        
+          <p>  <strong style="color: darkkhaki;">Targeted Marketing will be mostly for Northern Nigerian Men </strong> <BR>
+
+          
+          <strong style="color: burlywood;"> </strong>
+            <BR>
+            Age: 24+  <BR>
+            Gender: Male  <BR>
+            Location: Northern Nigeria  <BR>
+            Income: Higher income levels (generally associated with older age)  <BR><BR><BR><BR>
+            By clearly defining your ideal customer, you can tailor your marketing efforts to maximize impact and minimize wasted resources.
+            <BR>
+           
+            <BR>
+              <BR>    <strong style="color: burlywood;">Community Engagement: </strong>   Utilize community boards to directly reach potential customers. Identify locations where your target demographic gathers in large numbers and strategically promote your products in those areas.
+                <BR>
+                   </p>
+      
+           <P> 
+            <strong style="color: burlywood;"> Sponsor or participate in community events to increase brand awareness.</strong>
+            
+            Events with your tagerting demographic,
+            Consider focusing on a specific type of fabric or style, such as African prints, luxury textiles, or sustainable materials.
+            Source unique or hard-to-find fabrics to attract discerning customers. Collaborate with Fashion Designers: Partner with local fashion designers to showcase your fabrics in their collections.
+            Create a VIP program with exclusive benefits for high-value customers.Partner with Wedding Planners: Collaborate with wedding planners to provide fabric options for bridal gowns, bridesmaid dresses, and decor. Offer custom fabric gifts for corporate events, employee rewards, or client appreciation.
+            Collaborate with Corporate Event Planners: Partner with event planners to provide fabrics for event decor or custom items.</P>
+            <p> <strong style="color: burlywood;">Enhancing Customer Value with Additional Services  </strong><BR> Providing tailoring or alteration services within your store or Supplier Partnerships: If offering in-house services isn't feasible, partner with local tailors and offer their services to your customers. Negotiate favorable terms to maintain profitability while
+              building relationships with these businesses.Establish exclusive deals with tailors in the area, offering them discounted fabric prices in exchange for referring their customers to your store. This can create a mutually beneficial partnership and increase your customer base.
+              While offering value-added services can be a powerful marketing tool, it's essential to maintain profitability. Carefully evaluate the costs associated with these services and adjust your pricing accordingly. By focusing on customer satisfaction and building strong relationships with local businesses, you can position your store as the preferred 
+              destination for fabric and related services in your area.<BR> 
+              <strong style="color: burlywood;"> Influencer Partnerships: </strong>  Collaborate with local fashion influencers or bloggers to introduce your store and products to a wider audience.
+            </p>
+ 
+          </header>
+  
+     
+      <section class="closing">
+          
+      </section>
+  </body>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.recipient {
+    margin-bottom: 20px;
+}
+
+.salutation, .closing {
+    text-indent: 2em;
+}
+
+/* Add more specific styles as needed */
+body {
+    font-family: Arial, sans-serif;
+    background-color:
+    #063970 ;
+    color: #fff;
+    text-align: center;
+}
+
+h1 {
+    margin-top: 0;
+}
+
+form {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b2;
+}
+
+#results {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+</style>
+<script>
+document.getElementById("auditForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const formData = new FormData(this);
+    const data = {};
+
+    for (const [key, value] of formData.entries()) {
+        data[key] = value;
+    }
+
+    fetch("/submit-audit", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(result => {
+        document.getElementById("results").innerHTML = `
+            <h2>Audit Results</h2>
+            <p>Audit ID: ${result.auditId}</p>
+            <p>Status: ${result.status}</p>
+        `;
+    })
+    .catch(error => {
+        console.error("Error submitting audit:", error);
+    });
+});
+
+
+</script>
